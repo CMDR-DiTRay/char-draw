@@ -1,20 +1,20 @@
-const long TEST_SCR_RES_X = 80;
-const long TEST_SCR_RES_Y = 21;
+struct setGFXScreen_test {
+    long x;
+    long y;
+};
 
-int Test_SetGFXScreen () {
-	printf("SetGFXScreen text\n");
-    
+int Test_SetGFXScreen (const long x, const long y) {
     GFXScreen scr;
-    SetGFXScreen(&scr,TEST_SCR_RES_X,TEST_SCR_RES_Y);
-    
-    printf("  Screen resoluton (desired):\n");
-    printf("    X = %lu, Y = %lu\n", TEST_SCR_RES_X, TEST_SCR_RES_Y);
-    printf("  Screen resoluton (actual):\n");
+	SetGFXScreen(&scr, x, y);
+
+	//Check if the function modifies the GFXScreen values correctly
+    printf("  Screen resoluton (expected)\n");
+    printf("    X = %lu, Y = %lu\n", x, y);
+    printf("  Screen resoluton (actual)\n");
     printf("    X = %lu, Y = %lu\n", scr.x, scr.y);
 
-	if (scr.x != TEST_SCR_RES_X || scr.y != TEST_SCR_RES_Y) {
-		printf("ERROR:\n");
-		printf("  SetGFXScreen test failed!\n");
+	if (scr.x != x || scr.y != y) {
+		printf("  Value change test failed!\n");
 		return 1;
 	}
 
