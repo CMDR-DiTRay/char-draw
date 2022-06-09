@@ -5,19 +5,19 @@ unsigned GetCharType (double a) {
 		(a >= 337.5 && a < 0))
 		return 1;
 	if (a >= 22.5 && a < 67.5)
-		return 1;
+		return 2;
 	if (a >= 67.5 && a < 112.5)
-		return 1;
+		return 3;
 	if (a >= 112.5 && a < 157.5)
-		return 1;
+		return 4;
 	if (a >= 157.5 && a < 202.5)
-		return 1;
+		return 5;
 	if (a >= 202.5 && a < 247.5)
-		return 1;
+		return 6;
 	if (a >= 247.5 && a < 292.5)
-		return 1;
+		return 7;
 	if (a >= 292.5 && a < 337.5)
-		return 1;
+		return 8;
 	
 	return 0;
 }
